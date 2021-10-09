@@ -6,8 +6,12 @@ function uiManager() {
 
     const labelList = document.querySelectorAll("label");
     const elementsWithLabel = document.querySelectorAll(".with-label");
-    const selectorText = document.querySelector("#btn-txt");
+    const inputList = document.querySelectorAll("input[type=number]");
+    let historyElementList = document.querySelectorAll("li:not(.popup-list-element)");
 
+    const saveButton = document.querySelector("#save-history");
+    const clearButton = document.querySelector("#clear-history");
+    const selectorText = document.querySelector("#btn-txt");
     const unitSelectLabel = document.querySelector(".unit-select-label");
     const historyLabel = document.querySelector(".history-label")
     
@@ -42,6 +46,53 @@ function uiManager() {
             });
     
         });
+
+    });
+
+    inputList.forEach(function(input) {
+
+        saveButton.classList.add("disabled");
+
+        input.addEventListener("keyup", function() {
+
+            if (input.value.length === 0) {
+
+                saveButton.classList.add("disabled");
+    
+            } else {
+    
+                saveButton.classList.remove("disabled");
+    
+            }
+
+        });
+
+    });
+
+    clearButton.classList.add("disabled")
+    saveButton.addEventListener("click", function() {
+
+        if(![...saveButton.classList].includes("disabled")) {
+
+            clearButton.classList.remove("disabled");
+
+            clearButton.addEventListener("click", function() {
+
+                historyElementList = document.querySelectorAll("li:not(.popup-list-element)");
+
+                if(historyElementList.length === 0) {
+
+                    clearButton.classList.add("disabled"); 
+
+                }
+
+            });
+
+        } else {
+
+            clearButton.classList.add("disabled");
+
+        }
 
     });
 
@@ -334,8 +385,6 @@ function inputManager() {
             let target = e.target;
             let targetId = Number(e.target.id);
 
-            
-
         });
 
     });
@@ -357,55 +406,58 @@ function historyManager() {
     let unitInputType;
 
     let result;
-
+    
     saveButton.addEventListener("click", function() {
 
-        gridInputList.forEach(function(gridInput) {
+        if (![...saveButton.classList].includes("disabled")) {
 
+        gridInputList.forEach(function(gridInput) {
+    
             gridInputId = Number(gridInput.id);
             unitInputId = `[id='${gridInputId + 1}'`;
             unitInput = document.querySelector(unitInputId);
-
-            switch(Number(gridInputId)) {
     
+            switch(Number(gridInputId)) {
+        
                 case 1:
                     gridInputType = "MS";
                     break;
-
+    
                 case 3:                        
                     gridInputType = "ES";
                     break;
-
+    
                 case 5:                   
                     gridInputType = "S";
                     break;
-
-            }
-
-            if (gridInput.value.length !== 0) {
-
-                if (selectedUnit === 0) {
-
-                    unitInputType = "inch";
-    
-                    result = gridInput.value + gridInputType + " = " + unitInput.value + unitInputType;
-                    historyList.push(result);
-    
-                } else {
-    
-                    unitInputType = "cm";
-    
-                    result = gridInput.value + gridInputType + " = " + unitInput.value + unitInputType;
-                    historyList.push(result);
     
                 }
-            }
     
+            if (gridInput.value.length !== 0) {
+    
+                if (selectedUnit === 0) {
+    
+                    unitInputType = "inch";
+        
+                    result = gridInput.value + gridInputType + " = " + unitInput.value + unitInputType;
+                    historyList.push(result);
+        
+                } else {
+        
+                    unitInputType = "cm";
+        
+                    result = gridInput.value + gridInputType + " = " + unitInput.value + unitInputType;
+                    historyList.push(result);
+        
+                }
+                
+            }
+        
         });
 
         const historyListSection = document.querySelector(".history-section");
         const historyElementList = document.createElement("ol");
-
+    
         historyList.forEach(function(elem) {
 
             const historyElement = document.createElement("li");
@@ -413,19 +465,28 @@ function historyManager() {
             historyElementList.appendChild(historyElement);
 
         });
-
+    
         historyListSection.appendChild(historyElementList);
         historyList.length = 0;
+    
+        }
 
     });
 
+    
     clearButton.addEventListener("click", function() {
-
+    
         const historyLastList = document.querySelector("ol:last-of-type:not(.popup-list)");
+        const historyElementList = document.querySelectorAll("li:not(.popup-list-element)");
 
-        historyLastList.innerHTML = "";
-        historyLastList.remove();
+        if (![...clearButton.classList].includes("disabled")) {
 
+            console.log("pass");
+            historyLastList.innerHTML = "";
+            historyLastList.remove();
+            
+        } 
+    
     });
 
 }

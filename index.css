@@ -17,6 +17,10 @@ vgui colors:
     --dim-green: rgb(156, 168, 148);
     --scrollbar-green: rgb(90, 106, 80);
     --background-green: rgb(117, 128, 111);
+
+    --disabled-text: rgb(117, 128, 111);
+    --disabled-text-bg: rgb(40, 46, 34);
+
 }
 
 ::selection {
@@ -28,6 +32,16 @@ vgui colors:
 ::placeholder {
 
     color: var(--background-green);
+
+}
+
+.disabled {
+
+    color: var(--disabled-text-bg) !important; 
+    text-shadow: 0.8px 0.8px var(--disabled-text) !important;
+    outline: 1px solid black !important;
+    border-color: var(--border-white) var(--border-green) var(--border-green) var(--border-white) !important;
+    padding: 3px 2px 5px 0 !important;
 
 }
 
