@@ -1,0 +1,416 @@
+
+/* 
+vgui colors:
+*/
+
+:root  {
+
+    --white: rgb(216, 222, 211);
+    --border-white: rgb(136, 145, 128);
+
+    --yellow: rgb(196, 181, 80);
+    --background-yellow: rgb(149, 136, 49);
+
+    --green: rgb(76, 88, 63);
+    --dark-green: rgb(62, 70, 55);
+    --border-green: rgb(40, 46, 34);
+    --dim-green: rgb(156, 168, 148);
+    --scrollbar-green: rgb(90, 106, 80);
+    --background-green: rgb(117, 128, 111);
+}
+
+::selection {
+
+    background: var(--background-yellow);
+
+}
+
+::placeholder {
+
+    color: var(--background-green);
+
+}
+
+h1, h2, h3, h4, h5, h6, p, label, input, li, ol, button {
+
+    padding: 0;
+    margin: 0;
+
+}
+
+html, body {
+
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(41, 41, 41);
+    font-family: Arial, Helvetica, sans-serif;
+    caret-color: var(--white);
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.first-container {
+
+    display: inline-block;
+    height: 355px;
+    width: 490px;
+    background-color: var(--green);
+    border: 1px solid;
+    border-color: var(--border-white) var(--border-green) var(--border-green)  var(--border-white);
+
+}
+
+.second-container {
+
+    display: flex;
+    height: 320px;
+    width: 480px;
+    margin: 5px 5px 5px;
+    box-sizing: border-box;
+    background-color: var(--green);
+    border: 1px solid;
+    border-color: var(--border-white) var(--border-green) var(--border-green)  var(--border-white);
+
+}
+
+.main-header {
+
+    font-size: small;
+    font-weight: normal;
+    color: white;
+    margin: 10px 5px 0;
+    height: 15px;
+    user-select: none;
+
+}
+
+.interior-container {
+
+    margin: 10px 0 30px 30px;
+    box-sizing: border-box;
+
+}
+
+.interior-text {
+
+    display: block;
+    height: 15px;
+    font-size: small;
+    font-weight: normal;
+    color: var(--white);
+    user-select: none;
+
+}
+
+.interior-text-inline {
+
+    display: inline;
+    font-size: small;
+    font-weight: normal;
+    color: var(--white);
+
+}
+
+.interior-text-desc {
+
+    position: fixed;
+    margin: 295px 0 0 240px;
+    font-size: x-small;
+    font-weight: normal;
+    color: var(--dim-green);
+
+}
+
+.interior-text-url {
+
+    display: inline;
+    font-size: small;
+    font-weight: normal;
+    color: var(--dim-green);
+    text-decoration: underline;
+
+}
+
+.interior-text-url:active {
+
+    background: var(--background-yellow);
+
+}
+
+.input-container {
+
+    display: flex;
+    margin-top: 20px;
+
+}
+
+#inp-2, #inp-4, #inp-6, #inp-8 {
+
+    margin-left: 20px;
+
+}
+
+.input-container input {
+
+    height: 25px;
+    width: 85px;
+    padding: 4px 2px 4px 2px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: var(--border-green)  var(--border-white) var(--border-white) var(--border-green);
+    outline: none;
+    background-color: var(--dark-green);
+    color: var(--white);
+    
+}
+
+.unit-label, .unit-select-label, .history-label {
+
+    margin-bottom: 3px;
+
+}
+
+
+.unit-select-button {
+
+    height: 25px;
+    width: 85px;
+    padding: 4px 2px 4px 2px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color:var(--border-green) var(--border-white) var(--border-white) var(--border-green);
+    color: var(--white);
+    background-color: var(--dark-green);
+    text-align: left;
+    font-size: small;
+    font-weight: normal;
+    color: var(--white);
+    user-select: none;
+
+}
+
+.unit-select-popup {
+
+    height: 44px;
+    width: 85px;
+    visibility: hidden;
+    opacity: 1;
+    position: fixed;
+    z-index: 1;
+    margin: 1px 0 0 0px;    
+    border: 1px solid;
+    border-color: var(--border-white) var(--border-green) var(--border-green)  var(--border-white);
+    background-color: var(--green);
+    box-sizing: border-box;
+    cursor: default;
+
+}
+
+.popup-list-element {
+
+    padding: 3px 0 3px 4px;
+
+}
+
+.popup-list-element:hover {
+
+    background: var(--background-yellow);
+
+}
+
+.unit-select-button::before {
+
+    content: url('https://api.iconify.design/octicon/triangle-up-16.svg?color=%239ca894&flip=vertical');
+    position: fixed;
+    margin-left: 65px;
+
+}
+
+#source-url {
+
+    margin-top: 15px;
+
+}
+
+#inp-8 {
+
+    width: 85px;
+
+}
+
+.history-label {
+
+    width: 85px;
+
+}
+
+.button-set {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.history-button {
+
+    height: 25px;
+    width: 40px;
+    padding: 3px 2px 5px 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: var(--border-white) var(--border-green) var(--border-green) var(--border-white);
+    background-color: var(--green);
+    font-size: small;
+    font-weight: normal;
+    color: var(--white);
+    user-select: none;
+    cursor: default;
+
+}
+
+.history-button:active {
+
+    border-color: var(--border-green)  var(--border-white) var(--border-white) var(--border-green);
+    padding: 5px 0 3px 2px;
+
+}
+
+#save-history {
+
+    justify-self: flex-start;
+
+}
+
+#clear-history {
+
+    justify-self: flex-end;
+
+}
+
+
+.history-header {
+
+    height: 12px;
+    width: 168px;
+    position: sticky;
+    top: 0px;
+    margin: 0 5px 5px 5px;
+    padding: 3px 0 2px 0;
+    background: var(--dark-green);
+    border-bottom: 1px solid var(--border-green);
+    font-size: x-small;
+    font-weight: normal;
+    color: var(--yellow);
+    user-select: none;
+
+
+}
+
+.history-container {
+
+    display: inline-block;
+    height: 260px;
+    width: 200px;
+    margin: 30px 30px 30px 30px;
+    box-sizing: border-box;
+    background-color: var(--dark-green);
+    border: 1px solid;
+    border-color: var(--border-green) var(--border-white) var(--border-white) var(--border-green);
+    overflow-y: scroll;
+
+}
+
+.history-section {
+
+    list-style-type: none;
+
+}
+
+.history-section > ol {
+
+    margin: 0px 5px 5px 5px;
+    padding-bottom: 2px;
+    font-size: normal;
+    font-weight: normal;
+    color: var(--white);
+    cursor: text;
+    list-style-type: none;
+    border-bottom: 1px solid var(--border-green);
+    
+}
+
+.history-section > ol > li {
+
+    margin-bottom: 2px;
+
+}
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+
+    width: 18px;
+    background-color: var(--green);
+
+}
+
+::-webkit-scrollbar-track {
+
+    background-color: var(--scrollbar-green);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background-color: var(--green);
+    border: 1px solid;
+    border-color: var(--border-white) var(--border-green) var(--border-green) var(--border-white);
+
+}
+
+::-webkit-scrollbar-button {
+
+    border: 1px solid;
+    border-color: var(--border-white) var(--border-green) var(--border-green) var(--border-white);
+
+}
+
+::-webkit-scrollbar-button:decrement {
+
+    background: url('https://api.iconify.design/octicon/triangle-up-16.svg?color=%239ca894');
+    background-position: center;
+
+}
+
+::-webkit-scrollbar-button:increment {
+
+    background: url('https://api.iconify.design/octicon/triangle-up-16.svg?color=%239ca894&flip=vertical');
+    background-position: center;
+
+}
+
+::-webkit-scrollbar-button:active {
+
+    background-position: top 50px left 100px;
+    border-color: var(--border-green)  var(--border-white) var(--border-white) var(--border-green);
+
+}

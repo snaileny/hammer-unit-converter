@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+    <title>Hammer Unit Converter</title>
+</head>
+<body>
+    <div class="first-container">
+        <h4 class="main-header">Hammer Unit Converter (Source Engine)</h6>
+        <div class="second-container">
+            <div class="interior-container">
+                    <div class="input-container" id="inp-cont-1">
+                        <div id="inp-1">
+                            <label class="interior-text unit-label" for="1">Map Scale</label>
+                            <input class="grid-input with-label" id="1" type="number" placeholder="Units">
+                        </div>
+                        <div id="inp-2">
+                            <label class="interior-text unit-label imperial-metric" for="2">Imperial</label>
+                            <input class="unit-input with-label output" id="2" type="number" placeholder="Inches">
+                        </div>
+                    </div>
+                    <div class="input-container" id="inp-cont-2">
+                        <div id="inp-3">
+                            <label class="interior-text unit-label" for="3">Entity Scale</label> 
+                            <input class="grid-input with-label" id="3" type="number" placeholder="Units">                       
+                        </div>
+                        <div id="inp-4">
+                            <label class="interior-text unit-label imperial-metric" for="4">Imperial</label>
+                            <input class="unit-input with-label output" id="4" type="number"  placeholder="Inches">
+                        </div>
+                    </div>
+                    <div class="input-container" id="inp-cont-3">
+                        <div id="inp-5">
+                            <label class="interior-text unit-label" for="5">Skybox</label>
+                            <input class="grid-input with-label" id="5" type="number" placeholder="Units">
+                        </div>
+                        <div id="inp-6">
+                            <label class="interior-text unit-label imperial-metric" for="6">Imperial</label>
+                            <input class="unit-input with-label output" id="6" type="number" placeholder="Inches">
+                        </div>
+                    </div>
+                    <div class="input-container" id="inp-cont-4">
+                        <div id="inp-7">
+                            <label class="interior-text unit-select-label" for="unit-select">Convert to</label>
+                            <button class="unit-select-button with-label" id="unit-select" type="button" value="imperial"><span id="btn-txt">Imperial</span></button> 
+                            <div class="unit-select-popup">
+                                <ol class="popup-list">
+                                    <li class="popup-list-element interior-text" id="unit-imperial">Imperial</li>
+                                    <li class="popup-list-element interior-text" id="unit-metric">Metric</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div id="inp-8">
+                            <label class="interior-text history-label" for="save-history">History</label>
+                            <div class="button-set">
+                                <button class="history-button with-label" id="save-history" type="button">Save</button>
+                                <button class="history-button with-label" id="clear-history" type="button">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                <p id="source-url"><a class="interior-text-url" href="https://developer.valvesoftware.com/wiki/Dimensions#Map_Grid_Units:_quick_reference" target="_blank">Source at Valve Developer Wiki</a></p>
+            </div>
+            <div class="history-container">
+                <h6 class="history-header">TAB HISTORY</h6>
+                <div class="history-section">
+                    <!--<ol>
+                        <li>36720MS = 70000inch</li>
+                        <li>36720MS = 70000inch</li>
+                        <li>36720MS = 70000inch</li>
+                    </ol>-->
+                </div> 
+            </div>
+            <span class="interior-text-desc">*MS = Map Scale, ES = Entity Scale, S = Skybox</span>
+        </div>
+    </div>
+</body>
+</html>
