@@ -150,6 +150,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: x-small;
     font-weight: normal;
     color: var(--dim-green);
+    user-select: none;
+    cursor: default;
 
 }
 
