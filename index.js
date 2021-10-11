@@ -152,7 +152,6 @@ function unitSelector() {
         } else {
 
             selectorPopup.setAttribute("style", "visibility: hidden;");
-            
 
         }
 
@@ -264,7 +263,6 @@ function calculateUnits(userInput, type) {
     
         }
     }
-    
 }
 
 function calculateGrids(userInput, type) {
@@ -307,7 +305,6 @@ function calculateGrids(userInput, type) {
             case 6: //skybox scale
                 grid_output = userInput / 30.48;
                 return Math.round(grid_output);
-
 
             default:
                 return 0;
@@ -380,13 +377,6 @@ function inputManager() {
 
         });
 
-        unitInput.addEventListener("keydown", function(e) {
-
-            let target = e.target;
-            let targetId = Number(e.target.id);
-
-        });
-
     });
 
 }
@@ -414,7 +404,7 @@ function historyManager() {
         gridInputList.forEach(function(gridInput) {
     
             gridInputId = Number(gridInput.id);
-            unitInputId = `[id='${gridInputId + 1}'`;
+            unitInputId = `[id='${gridInputId + 1}']`;
             unitInput = document.querySelector(unitInputId);
     
             switch(Number(gridInputId)) {
@@ -481,7 +471,6 @@ function historyManager() {
 
         if (![...clearButton.classList].includes("disabled")) {
 
-            console.log("pass");
             historyLastList.innerHTML = "";
             historyLastList.remove();
             
