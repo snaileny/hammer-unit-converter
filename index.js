@@ -482,9 +482,9 @@ function historyManager() {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    uiManager()
+    uiManager();
     unitSelector();
     inputManager();
-    historyManager()
+    historyManager();
 
 });
