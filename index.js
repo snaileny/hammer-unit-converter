@@ -1,5 +1,6 @@
 
-//geto redo to spageto
+const app = (function() {    
+        
 let selectedUnit = 0;
 
 function uiManager() {
@@ -488,3 +489,5 @@ document.addEventListener('DOMContentLoaded', function() {
     historyManager();
 
 });
+
+})();
