@@ -1,5 +1,5 @@
 
-const app = (function() {    
+(function() {    
         
 let selectedUnit = 0;
 
