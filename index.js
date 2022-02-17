@@ -1,6 +1,5 @@
 
-const app = (function() {    
-        
+//geto redo to spageto
 let selectedUnit = 0;
 
 function uiManager() {
@@ -489,5 +488,3 @@ document.addEventListener('DOMContentLoaded', function() {
     historyManager();
 
 });
-
-})();
