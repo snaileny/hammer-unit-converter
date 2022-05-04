@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
             historyManager.saveToSessionStorage(userInput);
             historyManager.updateClearButtonState();
             historyManager.updateHistory();
-            console.log(JSON.stringify(sessionStorage));
 
         }
 
@@ -108,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
             historyManager.clearSessionStorage();
             historyManager.updateClearButtonState();
             historyManager.updateHistory();
-            console.log(JSON.stringify(sessionStorage));
 
         }
 
