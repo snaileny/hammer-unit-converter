@@ -1,5 +1,3 @@
-
-//geto redo to spageto
 let selectedUnit = 0;
 
 function uiManager() {
