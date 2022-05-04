@@ -1,7 +1,7 @@
-import UnitSelector from "/js/modules/unitSelector.js"; 
-import InputHandler from "/js/modules/inputHandler.js";
-import HistoryManager from "/js/modules/historyManager.js";
-import Converter from "/js/converter.js";
+import UnitSelector from "./js/modules/unitSelector.js"; 
+import InputHandler from "./js/modules/inputHandler.js";
+import HistoryManager from "./js/modules/historyManager.js";
+import Converter from "./js/converter.js";
 import {applyOn, changeTextContent, changePlaceholder, dispatchKeyboardEvent} from "/js/helpers.js";
 
 document.addEventListener('DOMContentLoaded', () => {
