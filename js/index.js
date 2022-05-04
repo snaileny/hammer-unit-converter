@@ -1,8 +1,8 @@
-import UnitSelector from "hammer-unit-converter/js/modules/unitSelector.js"; 
-import InputHandler from "hammer-unit-converter/js/modules/inputHandler.js";
-import HistoryManager from "hammer-unit-converter/js/modules/historyManager.js";
-import Converter from "hammer-unit-converter/js/converter.js";
-import {applyOn, changeTextContent, changePlaceholder, dispatchKeyboardEvent} from "hammer-unit-converter/js/helpers.js";
+import UnitSelector from "/hammer-unit-converter/js/modules/unitSelector.js"; 
+import InputHandler from "/hammer-unit-converter/js/modules/inputHandler.js";
+import HistoryManager from "/hammer-unit-converter/js/modules/historyManager.js";
+import Converter from "/hammer-unit-converter/js/converter.js";
+import {applyOn, changeTextContent, changePlaceholder, dispatchKeyboardEvent} from "/hammer-unit-converter/js/helpers.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
