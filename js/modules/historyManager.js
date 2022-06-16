@@ -56,7 +56,7 @@ export default class HistoryManager {
     updateClearButtonState() {
 
         const clearButton = this.elements.historyButtonClear;
-        const historyEmpty = this.sessionStorageEmpty();
+        const historyEmpty = this.localStorageEmpty();
         
         if (historyEmpty === false) {
 
@@ -74,33 +74,33 @@ export default class HistoryManager {
 
     }
 
-    saveToSessionStorage(inputObj) {
+    saveTolocalStorage(inputObj) {
 
         for (let input in inputObj) {
 
-            sessionStorage.setItem(input, inputObj[input]);
+            localStorage.setItem(input, inputObj[input]);
 
         }
 
     }
 
-    clearSessionStorage() {
+    clearlocalStorage() {
 
         for (let input in HistoryManager.inputTypes) {
 
-            sessionStorage.removeItem(input);
+            localStorage.removeItem(input);
 
         }
 
     }
 
-    getValuesFromSessionStorage() {
+    getValuesFromlocalStorage() {
 
         let obj = {};
 
         for (let key in HistoryManager.inputTypes) {
 
-            const value = sessionStorage.getItem(key);
+            const value = localStorage.getItem(key);
 
             if (value) {
 
@@ -114,12 +114,12 @@ export default class HistoryManager {
 
     }
 
-    sessionStorageEmpty() {
+    localStorageEmpty() {
 
-        const sessionKeys = Object.keys(sessionStorage);
+        const localKeys = Object.keys(localStorage);
         const inputArr = Object.keys(HistoryManager.inputTypes);
 
-        for (let key of sessionKeys) {
+        for (let key of localKeys) {
 
             if (inputArr.includes(key)) {
 
@@ -135,10 +135,10 @@ export default class HistoryManager {
 
     updateHistory() {
 
-        if (!this.sessionStorageEmpty()) {
+        if (!this.localStorageEmpty()) {
 
             const unit = this.selectedUnit.get;
-            const valueObj = this.getValuesFromSessionStorage();
+            const valueObj = this.getValuesFromlocalStorage();
             const ol = document.createElement("ol");
             let unitAbbr, template = "";
 
